@@ -55,10 +55,13 @@ function handleStartTimer() {
     refs.minutesEl.textContent = time.minutes;
     refs.secondsEl.textContent = time.seconds;
     if (selectedDate <= currentDate) {
+      clearInterval(timerId); 
+      Notify.success('Таймер завершився', optionsNotiflix); 
       return;
     }
   }, 1000);
 }
+
 
 
 function convertMs(ms) {
